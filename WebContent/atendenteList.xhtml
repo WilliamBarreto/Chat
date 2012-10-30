@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	
+	<h:outputText value="Fila de Atendimento"/>
+	
+	<h:form>
+	
+	<h:dataTable value="#{atendimentoControle.chats}" var="item">
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Usuário" />
+			</f:facet>
+			<h:outputText value="#{item.usuario.nome}" />
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="ID Chat" />
+			</f:facet>
+			<h:outputText value="#{item.id}" />
+		</h:column>
+		
+	</h:dataTable>
+
+	</h:form>
+		
+	<h:form>
+		<h:commandButton value="Chamar Fila" actionListener="#{atendimentoControle.chamarFila}"/>	
+	</h:form>
+	
+	<h:outputText value="#{atendimentoControle.chat.usuario.nome}"/>
+	<h:outputText value="#{atendimentoControle.chat.id}"/>
+	
+</html>
